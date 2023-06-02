@@ -1,0 +1,21 @@
+<div id="div1" style="display:none;">/*содержимое блока №1*/</div>
+<div id="div2" style="display:none;">/*содержимое блока №2*/</div>
+
+
+<script type="text/javascript" >
+let currentDate = new Date();
+let currentDay = currentDate.getDay(); //возвращает день недели от 0 (воскресенье) до 6 (суббота)
+let currentTime = currentDate.getHours();
+
+//получаем div блоки по id
+let div1 = document.getElementById("div1");
+let div2 = document.getElementById("div2");
+
+if (currentDay >= 2 && currentDay <= 6 && currentTime >= 10 && currentTime <= 20) {
+  div1.style.display = "block"; //выводим div блок №1
+} else if ((currentDay == 2 && currentTime >= 20) || (currentDay >= 3 && currentDay <= 6 && currentTime < 10) || (currentDay == 7 || currentDay == 0)) {
+  div2.style.display = "block"; //выводим div блок №2
+} else {
+  //ни один div блок не выводим
+}
+</script>
